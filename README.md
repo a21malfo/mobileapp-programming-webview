@@ -1,7 +1,24 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+**Jag började med att forka ett projekt från GitHub. Därefter gick jag in i Android Studio och 
+** New-file-project from version control-mitt github och hämtade projektet. 
+Sen Rename your App, i mappen values och filen strings.xml. Döpte till Malins.
+Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`.
+Detta gjorde jag i layout- filen activity_main.xml. Ändrade <WebText till <WebView
+Give the WebView an ID. Hint: `android:id="@+id/my_webview"` Detta gjorde jag i layout under webViem 
+
+Därefter skapade jag en ny variabel av klassen WebView och döpte den till myWebView, i MainActivity.java filen. 
+Jag satte private innan för att göra variabelm privat. 
+
+Därefter skapade jag i metoden on create som startar upp appen att den ska läsa in till min my_webview i activity_main.xml
+hämta data från loadUrl("https://his.se"). Jag deklarade en ny variabel WebViewClient också i detta skede. 
+
+Därefter fixade jag så att javascript kan läsas in i webview client
+
+
+
+
 
 _Du kan ta bort all text som finns sedan tidigare_.
 
