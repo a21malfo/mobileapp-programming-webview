@@ -14,7 +14,13 @@ Jag satte private innan för att göra variabelm privat.
 Därefter skapade jag i metoden on create som startar upp appen att den ska läsa in till min my_webview i activity_main.xml
 hämta data från loadUrl("https://his.se"). Jag deklarade en ny variabel WebViewClient också i detta skede. 
 
-Därefter fixade jag så att javascript kan läsas in i webview client
+Därefter fixade jag så att javascript kan läsas in i webview client, commit pusch
+
+Efter detta så skapade jag en tillgänglig assets html fil. högerklicka app -new- folder- assets folder-sparade 
+sen lades den som en fil i mitt projekt. Jag högerklickade på denna och döpte den till assets.html
+
+
+
 
 
 
