@@ -2,8 +2,12 @@
 # Rapport
 
 Jag började med att forka ett projekt från GitHub. Därefter gick jag in i Android Studio och 
-Jag öppnade projektet genom att välja New-file-project from version control. Där hittar jag mitt github konto och hämtade projektet. 
-Därefter döpte jag om appen till "Malins WebWiewApp" genom att ändra i filen strings.xml. 
+Jag öppnade projektet genom att välja New-file-project from version control. 
+Där hittade jag mitt github konto och hämtade projektet. 
+
+##Rename your App
+
+I filen strings.xml och ändrades namnet till "Malins WebWiewApp".
 
 Kod
 ```
@@ -14,6 +18,20 @@ Kod
 </resources>
 
 ```
+##Enable Internet access for your App
+
+I mappen manifests och filen AndroidManifest.xml lades kod till för att skapa tillgång till internet för appen.
+
+Kod
+```
+<uses-permission android:name="android.permission.INTERNET" />
+
+```
+
+##Create a WebView element 
+I layout och i filen  skapades ett Webview  layout file `content_main.xml` by replacing the existing `TextView`
+
+
 
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`.
 Detta gjorde jag i layout- filen activity_main.xml. Ändrade <WebText till <WebView
