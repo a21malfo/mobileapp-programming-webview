@@ -1,9 +1,20 @@
 
 # Rapport
 
-**Jag började med att forka ett projekt från GitHub. Därefter gick jag in i Android Studio och 
-** New-file-project from version control-mitt github och hämtade projektet. 
-Sen Rename your App, i mappen values och filen strings.xml. Döpte till Malins.
+Jag började med att forka ett projekt från GitHub. Därefter gick jag in i Android Studio och 
+Jag öppnade projektet genom att välja New-file-project from version control. Där hittar jag mitt github konto och hämtade projektet. 
+Därefter döpte jag om appen till "Malins WebWiewApp" genom att ändra i filen strings.xml. 
+
+Kod
+```
+<resources>
+    <string name="app_name">Malins WebViewApp</string>
+    <string name="action_external_web">External Web Page</string>
+    <string name="action_internal_web">Internal Web Page</string>
+</resources>
+
+```
+
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`.
 Detta gjorde jag i layout- filen activity_main.xml. Ändrade <WebText till <WebView
 Give the WebView an ID. Hint: `android:id="@+id/my_webview"` Detta gjorde jag i layout under webViem 
