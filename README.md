@@ -18,7 +18,7 @@ Kod
 </resources>
 
 ```
-##Enable Internet access for your App
+## Enable Internet access for your App
 
 I mappen manifests och filen AndroidManifest.xml lades kod till för att skapa tillgång till internet för appen.
 
@@ -28,7 +28,7 @@ Kod
 
 ```
 
-##Create a WebView element 
+## Create a WebView element 
 I layout och i filen  skapades ett Webview  layout file `content_main.xml` by replacing the existing `TextView`
 
 
