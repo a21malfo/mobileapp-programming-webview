@@ -122,10 +122,10 @@ protected void onCreate(Bundle savedInstanceState)
 
 ## Enable Javascript execution in your WebViewClient
 
-Javascript är inaktiverat i en WebView som standard. 
-Genom att lägga till ny kod i filen `MainActivity.java` via WebSettings som är bifogat till WebView. 
-Hämta WebSettings med getSettings(), och sedan aktivera JavaScript med setJavaScriptEnabled(), ge funktionen värdet true. 
-På så sätt kan javascript läsas in i WebViewClient.
+Javascript är inaktiverat i en WebView som standard. Genom att lägga till ny kod i filen 
+`MainActivity.java` via WebSettings som är bifogat till WebView går det aktivera javascript. 
+Hämta WebSettings med getSettings(), och sedan aktivera JavaScript med setJavaScriptEnabled(), 
+ge funktionen värdet true. På så sätt kan javascript läsas in i WebViewClient.
 
 
 Kod som lades till, se kodrad 10-11: 
@@ -153,7 +153,7 @@ Kod som lades till, se kodrad 10-11:
 
 Skapa en asset folder genom att högerklicka på mappen `app`. Välj sedan `New` - `Folder` - `Assets Folder` 
 och tryck på `Finish`. Nu har en ny folder skapats i projektet. Högerklicka på foldern och skapa en 
-ny fil som döps till `asetts-html`
+ny fil, här döptes den till `asetts-html`
 
 
 ## Implement `showExternalWebPage()` and `showInternalWebPage()`.
@@ -162,7 +162,7 @@ I filen `MainActivity.java` ändrades kod för att lägga till External Webpage 
 External Webpage lades in som "https://his.se" och Internal Webpage lades in den skapade `asetts-html` filen. 
 
 
-Kod som skapades: 
+Kod som skapades, rad 3-4 och rad 6-7: 
 
  ```
 public class MainActivity extends AppCompatActivity {
@@ -219,7 +219,9 @@ protected void onCreate(Bundle savedInstanceState)
        
     }
  ```
+**Done!**
 
+Nedan visas External Webpage och Internal Webpage i bilder. 
 
 ![](Screenshot_20230404_123544.png)
 *Figur 1: External Webpage*
