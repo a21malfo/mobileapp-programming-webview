@@ -20,7 +20,7 @@ Kod som ändrades:
 ```
 ## Enable Internet access for your App
 
-I mappen manifests och filen AndroidManifest.xml lades kod till för att skapa tillgång till internet för appen.
+I mappen manifests och filen `AndroidManifest.xml` lades kod till för att skapa tillgång till internet för appen.
 
 Kod som lades till:
 ```
@@ -195,10 +195,12 @@ protected void onCreate(Bundle savedInstanceState)
     }
  ```
 
-*External Webpage,"https://his.se"*
-![](Screenshot_20230404_123544.png)
 
-*Internal Webpage, "file:///android_asset/assets.html"*
+![](Screenshot_20230404_123544.png)
+*Figur 1: External Webpage*
+
+
 ![](Screenshot_20230404_124259.png)
+*Figur 2: Internal Webpage*
 
 
