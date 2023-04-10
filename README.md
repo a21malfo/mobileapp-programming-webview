@@ -5,11 +5,11 @@ Jag började med att forka ett projekt från GitHub. Därefter gick jag in i And
 Jag öppnade projektet genom att välja New-file-project from version control. 
 Där hittade jag mitt github konto och hämtade projektet. 
 
-##Rename your App
+## Rename your App
 
 I filen strings.xml och ändrades namnet till "Malins WebWiewApp".
 
-Kod
+Kod som ändrades:
 ```
 <resources>
     <string name="app_name">Malins WebViewApp</string>
@@ -22,13 +22,14 @@ Kod
 
 I mappen manifests och filen AndroidManifest.xml lades kod till för att skapa tillgång till internet för appen.
 
-Kod
+Kod som lades till:
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 
 ```
 
 ## Create a WebView element 
+
 I layout och i filen  skapades ett Webview  layout file `content_main.xml` by replacing the existing `TextView`
 
 
