@@ -2,7 +2,7 @@
 # Rapport
 
 Jag började med att forka ett projekt från GitHub. Därefter gick jag in i Android Studio och 
-Jag öppnade projektet genom att välja New-file-project from version control. 
+öppnade projektet genom att välja File-New och sedan Project from version control. 
 Där hittade jag mitt github konto och hämtade projektet. 
 
 ## Rename your App
@@ -30,7 +30,20 @@ Kod som lades till:
 
 ## Create a WebView element 
 
-I layout och i filen  skapades ett Webview  layout file `content_main.xml` by replacing the existing `TextView`
+I layout och i filen `activity_main.xml` skapades ett Webview element genom att ändra från `TextView` till `WebView`.
+
+Kod som ändrades: 
+```
+<WebView
+android:id="@+id/my_webview"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/app_name"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+```
 
 
 
