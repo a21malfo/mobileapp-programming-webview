@@ -68,7 +68,7 @@ Kod som lades till, se första raden under WebView:
 I `MainActivity.java` filen deklarerades en ny variabel av klassen WebView med namnet `myWebView`.
 Denna variabeln deklareras direkt under Mainklassen, se ändrad kod (1). Variabeln skulle också vara en privat variabel, 
 därför sattes "private" före klassen WebView. Därefter instansieras variabeln genom att tilldela nyckelordet `New` I detta fall
-`new WebViewClient` som kopplas till WebView. Detta ger oss åtkomst till att surfa på webben. Koden som lades till finns i kod (2), se nedan.
+`new WebViewClient` som kopplas till WebView. Detta ger oss åtkomst till att surfa på webben. Koden som lades till finns i kod (2), se nedan. I detta skede visas alltså första sidan på appen `Malins WebVievApp` Skövde Högskolas webbsida som första sida genom att hämta data från loadUrl("https://his.se").
 
 
 Kod (1) som skapades, se andra raden:
@@ -83,15 +83,14 @@ private WebView myWebView;
 
     public void showInternalWebPage(){
         myWebView.loadUrl("file:///android_asset/assets.html");
-
     }
 ```
 
-Kod (2) som skapades, se rad 6-7:
+Kod (2) som skapades, se rad 7-9. Rad 3 visar att metoden onCreate ska starta upp i filen `activity_main.xml#:
 
 ```
-protected void onCreate(Bundle savedInstanceState) {
-
+protected void onCreate(Bundle savedInstanceState) 
+{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -99,21 +98,39 @@ protected void onCreate(Bundle savedInstanceState) {
 
         myWebView = findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+        myWebView.loadUrl("https://his.se");
+   }
+ ```
 
+## Enable Javascript execution in your WebViewClient
+
+Javascript är inaktiverat i en WebView som standard. 
+Genom att lägga till ny kod i filen `MainActivity.java` via WebSettings som är bifogat till WebView. 
+Hämta WebSettings med getSettings(), och sedan aktivera JavaScript med setJavaScriptEnabled(), ge funktionen värdet true. 
+På så sätt kan javascript läsas in i WebViewClient.
+
+Kod som lades till, se kodrad 10-11: 
+
+ ```
+ protected void onCreate(Bundle savedInstanceState) 
+ {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        myWebView = findViewById(R.id.my_webview);
+        myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+        myWebView.loadUrl("https://his.se");
 
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+       
+    }
  ```
 
 
 
-
-
-
-Därefter skapade jag i metoden on create som startar upp appen att den ska läsa in till min my_webview i activity_main.xml
-hämta data från loadUrl("https://his.se"). Jag deklarade en ny variabel WebViewClient också i detta skede. 
-
-Därefter fixade jag så att javascript kan läsas in i webview client, commit pusch
 
 Efter detta så skapade jag en tillgänglig assets html fil. högerklicka app -new- folder- assets folder-sparade 
 sen lades den som en fil i mitt projekt. Jag högerklickade på denna och döpte den till assets.html
