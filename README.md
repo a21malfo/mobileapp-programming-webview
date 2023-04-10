@@ -35,7 +35,6 @@ I layout och i filen `activity_main.xml` skapades ett Webview element genom att 
 Kod som ändrades: 
 ```
 <WebView
-android:id="@+id/my_webview"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:text="@string/app_name"
@@ -45,14 +44,71 @@ app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 ```
 
+## Give the WebView an ID. 
+
+Genom att lägga till koden `android:id="@+id/my_webview"`i layout och i filen `activity_main.xml`under funktionen WebView så fick 
+WebViem funktionen ett ID. 
+
+Kod som lades till, se första raden under WebView: 
+```
+<WebView
+        android:id="@+id/my_webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+```
+
+## Create a private member variable called `myWebView` of the type `WebView` and instantiate it in `onCreate()`and Create a new WebViewClient to attach to the WebView
+
+I `MainActivity.java` filen deklarerades en ny variabel av klassen WebView med namnet `myWebView`.
+Denna variabeln deklareras direkt under Mainklassen, se ändrad kod (1). Variabeln skulle också vara en privat variabel, 
+därför sattes "private" före klassen WebView. Därefter instansieras variabeln genom att tilldela nyckelordet `New` I detta fall
+`new WebViewClient` som kopplas till WebView. Detta ger oss åtkomst till att surfa på webben. Koden som lades till finns i kod (2), se nedan.
 
 
-Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`.
-Detta gjorde jag i layout- filen activity_main.xml. Ändrade <WebText till <WebView
-Give the WebView an ID. Hint: `android:id="@+id/my_webview"` Detta gjorde jag i layout under webViem 
+Kod (1) som skapades, se andra raden:
 
-Därefter skapade jag en ny variabel av klassen WebView och döpte den till myWebView, i MainActivity.java filen. 
-Jag satte private innan för att göra variabelm privat. 
+```
+public class MainActivity extends AppCompatActivity {
+private WebView myWebView;
+
+    public void showExternalWebPage(){
+        myWebView.loadUrl("https://his.se");
+    }
+
+    public void showInternalWebPage(){
+        myWebView.loadUrl("file:///android_asset/assets.html");
+
+    }
+```
+
+Kod (2) som skapades, se rad 6-7:
+
+```
+protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        myWebView = findViewById(R.id.my_webview);
+        myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+
+
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+ ```
+
+
+
+
+
 
 Därefter skapade jag i metoden on create som startar upp appen att den ska läsa in till min my_webview i activity_main.xml
 hämta data från loadUrl("https://his.se"). Jag deklarade en ny variabel WebViewClient också i detta skede. 
